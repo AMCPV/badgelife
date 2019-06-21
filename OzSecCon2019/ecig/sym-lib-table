@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name LTC2992)(type Legacy)(uri /home/ec0/Boards/LSAO/ecig/LTC2992.lib)(options "")(descr ""))
+  (lib (name ecig-rescue)(type Legacy)(uri ${KIPRJMOD}/ecig-rescue.lib)(options "")(descr ""))
+)

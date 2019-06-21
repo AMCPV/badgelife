@@ -1,0 +1,644 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L LSAO:LSAO J1
+U 1 1 5CEB9F0A
+P 2000 1400
+F 0 "J1" H 2000 1825 50  0000 C CNN
+F 1 "LSAO" H 2000 1734 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2000 1400 50  0001 C CNN
+F 3 "~" H 2000 1400 50  0001 C CNN
+	1    2000 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery BT1
+U 1 1 5CEBA06F
+P 3500 1300
+F 0 "BT1" H 3608 1346 50  0000 L CNN
+F 1 "Battery" H 3608 1255 50  0000 L CNN
+F 2 "Battery:BatteryHolder_Keystone_1042_1x18650" V 3500 1360 50  0001 C CNN
+F 3 "~" V 3500 1360 50  0001 C CNN
+	1    3500 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 1100 3500 1000
+Text GLabel 3500 1000 0    50   Input ~ 0
+VCCBat
+Wire Wire Line
+	1600 1500 1500 1500
+Text GLabel 1500 1500 0    50   Input ~ 0
+VCCBadge
+Wire Wire Line
+	1600 1600 1500 1600
+Text GLabel 1500 1600 0    50   Input ~ 0
+GND
+Wire Wire Line
+	3500 1500 3500 1650
+Text GLabel 3500 1650 0    50   Input ~ 0
+GND
+$Comp
+L Regulator_Switching:TPS61092 U1
+U 1 1 5CEC8635
+P 3300 3150
+F 0 "U1" H 3300 3875 50  0000 C CNN
+F 1 "TPS61092" H 3300 3784 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-16-1EP_4x4mm_P0.65mm_EP2.5x2.5mm" H 2350 2100 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/tps61090.pdf" H 3450 2000 50  0001 L CNN
+	1    3300 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5CEC87A3
+P 1750 2800
+F 0 "C1" H 1850 2800 50  0000 L CNN
+F 1 "10uF" H 1850 2700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1788 2650 50  0001 C CNN
+F 3 "~" H 1750 2800 50  0001 C CNN
+	1    1750 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5CEC87D3
+P 2150 2800
+F 0 "C2" H 2250 2800 50  0000 L CNN
+F 1 "0.1uF" H 2250 2700 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2188 2650 50  0001 C CNN
+F 3 "~" H 2150 2800 50  0001 C CNN
+	1    2150 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2850 3700 2750
+Wire Wire Line
+	3700 2750 3700 2650
+Connection ~ 3700 2750
+Text GLabel 4450 2750 2    50   Input ~ 0
+VCC5V
+Text GLabel 1950 2950 3    50   Input ~ 0
+GND
+Wire Wire Line
+	1750 2650 2150 2650
+Wire Wire Line
+	1750 2950 2150 2950
+NoConn ~ 3700 3050
+NoConn ~ 3700 3150
+Wire Wire Line
+	2900 2750 2900 2650
+$Comp
+L Device:L L1
+U 1 1 5CEC8E10
+P 2450 2650
+F 0 "L1" V 2272 2650 50  0000 C CNN
+F 1 "6.8uH" V 2363 2650 50  0000 C CNN
+F 2 "Inductor_SMD:L_Bourns_SRN6045TA" H 2450 2650 50  0001 C CNN
+F 3 "~" H 2450 2650 50  0001 C CNN
+	1    2450 2650
+	0    1    1    0   
+$EndComp
+Connection ~ 2900 2650
+Text GLabel 1550 2650 0    50   Input ~ 0
+VCCBadge
+Wire Wire Line
+	1550 2650 1750 2650
+Connection ~ 1750 2650
+Wire Wire Line
+	2150 2650 2300 2650
+Connection ~ 2150 2650
+Wire Wire Line
+	2600 2650 2900 2650
+Text GLabel 2200 3350 0    50   Input ~ 0
+VCCBadge
+$Comp
+L Device:R R1
+U 1 1 5CEC955E
+P 2400 3350
+F 0 "R1" V 2300 3400 50  0000 C CNN
+F 1 "330k" V 2200 3350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2330 3350 50  0001 C CNN
+F 3 "~" H 2400 3350 50  0001 C CNN
+	1    2400 3350
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2200 3350 2250 3350
+Wire Wire Line
+	2250 3350 2250 2950
+Wire Wire Line
+	2250 2950 2900 2950
+Connection ~ 2250 3350
+Wire Wire Line
+	2550 3350 2550 3050
+Wire Wire Line
+	2550 3050 2900 3050
+Wire Wire Line
+	2900 3350 2900 3750
+Wire Wire Line
+	2900 3750 3100 3750
+Wire Wire Line
+	3100 3750 3200 3750
+Connection ~ 3100 3750
+Wire Wire Line
+	3200 3750 3300 3750
+Connection ~ 3200 3750
+Wire Wire Line
+	3300 3750 3400 3750
+Connection ~ 3300 3750
+NoConn ~ 3500 3750
+Text GLabel 2900 3750 3    50   Input ~ 0
+GND
+$Comp
+L Jumper:SolderJumper_2_Bridged JP1
+U 1 1 5CECA6B6
+P 2750 3500
+F 0 "JP1" H 2700 3400 50  0000 L CNN
+F 1 "Jumper" V 2795 3568 50  0001 L CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 2750 3500 50  0001 C CNN
+F 3 "~" H 2750 3500 50  0001 C CNN
+	1    2750 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2750 3350 2750 3150
+Wire Wire Line
+	2750 3150 2900 3150
+Wire Wire Line
+	2750 3650 2750 3750
+Wire Wire Line
+	2750 3750 2900 3750
+Connection ~ 2900 3750
+$Comp
+L Device:C C3
+U 1 1 5CECAD93
+P 3900 2900
+F 0 "C3" H 4000 2900 50  0000 L CNN
+F 1 "2.2uF" H 4000 2800 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 3938 2750 50  0001 C CNN
+F 3 "~" H 3900 2900 50  0001 C CNN
+	1    3900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5CECAD99
+P 4300 2900
+F 0 "C4" H 4400 2900 50  0000 L CNN
+F 1 "100uF" H 4400 2800 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4338 2750 50  0001 C CNN
+F 3 "~" H 4300 2900 50  0001 C CNN
+	1    4300 2900
+	1    0    0    -1  
+$EndComp
+Text GLabel 4100 3050 3    50   Input ~ 0
+GND
+Wire Wire Line
+	3900 2750 4300 2750
+Wire Wire Line
+	3900 3050 4300 3050
+Wire Wire Line
+	3700 2750 3900 2750
+Connection ~ 3900 2750
+Wire Wire Line
+	4300 2750 4450 2750
+Connection ~ 4300 2750
+$Comp
+L Device:Q_NMOS_GDS Q1
+U 1 1 5CECBB84
+P 4750 1300
+F 0 "Q1" H 4955 1346 50  0000 L CNN
+F 1 "IRLS3034" H 4955 1255 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:TO-263-3_TabPin2" H 4950 1400 50  0001 C CNN
+F 3 "~" H 4750 1300 50  0001 C CNN
+	1    4750 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 6500 2600 2    50   Input ~ 0
+FETGate
+Text GLabel 4850 1100 1    50   Input ~ 0
+FETDrain
+$Comp
+L 74xx:74HCT595 U2
+U 1 1 5CECC075
+P 5900 3000
+F 0 "U2" H 5450 2500 50  0000 C CNN
+F 1 "74HCT595" H 5300 2400 50  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 5900 3000 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf" H 5900 3000 50  0001 C CNN
+	1    5900 3000
+	1    0    0    -1  
+$EndComp
+Text GLabel 6000 2200 2    50   Input ~ 0
+VCC5VM
+Wire Wire Line
+	5900 2400 5900 2200
+Wire Wire Line
+	5900 2200 6000 2200
+Wire Wire Line
+	6300 2600 6500 2600
+NoConn ~ 6300 2800
+NoConn ~ 6300 2900
+NoConn ~ 6300 3000
+NoConn ~ 6300 3100
+NoConn ~ 6300 3200
+NoConn ~ 6300 3300
+NoConn ~ 6300 3500
+$Comp
+L Device:LED D1
+U 1 1 5CECEB6F
+P 6000 1350
+F 0 "D1" V 6038 1233 50  0000 R CNN
+F 1 "LED" V 5947 1233 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 6000 1350 50  0001 C CNN
+F 3 "~" H 6000 1350 50  0001 C CNN
+	1    6000 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5CECEC65
+P 6400 1350
+F 0 "D2" V 6438 1233 50  0000 R CNN
+F 1 "LED" V 6347 1233 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 6400 1350 50  0001 C CNN
+F 3 "~" H 6400 1350 50  0001 C CNN
+	1    6400 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5CECECD8
+P 6000 950
+F 0 "R3" H 6070 996 50  0000 L CNN
+F 1 "470r" H 6070 905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 5930 950 50  0001 C CNN
+F 3 "~" H 6000 950 50  0001 C CNN
+	1    6000 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5CECED4C
+P 6400 950
+F 0 "R4" H 6470 996 50  0000 L CNN
+F 1 "470r" H 6470 905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6330 950 50  0001 C CNN
+F 3 "~" H 6400 950 50  0001 C CNN
+	1    6400 950 
+	1    0    0    -1  
+$EndComp
+Text GLabel 6600 700  2    50   Input ~ 0
+VCC5VM
+Text GLabel 5900 700  0    50   Input ~ 0
+FETGate
+Wire Wire Line
+	5900 700  6000 700 
+Wire Wire Line
+	6000 700  6000 800 
+Wire Wire Line
+	6600 700  6400 700 
+Wire Wire Line
+	6400 700  6400 800 
+Wire Wire Line
+	6000 1100 6000 1200
+Wire Wire Line
+	6400 1100 6400 1200
+Text GLabel 6200 1800 3    50   Input ~ 0
+GND
+Wire Wire Line
+	6000 1500 6000 1650
+Wire Wire Line
+	6000 1650 6200 1650
+Wire Wire Line
+	6400 1650 6400 1500
+Wire Wire Line
+	6200 1650 6200 1800
+Connection ~ 6200 1650
+Wire Wire Line
+	6200 1650 6400 1650
+Text GLabel 4400 1300 0    50   Input ~ 0
+FETGateB
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 5CED1943
+P 7800 1300
+F 0 "H2" H 7900 1351 50  0000 L CNN
+F 1 "510-" H 7900 1260 50  0000 L CNN
+F 2 "Connector_Pin:Pin_D1.3mm_L11.0mm" H 7800 1300 50  0001 C CNN
+F 3 "~" H 7800 1300 50  0001 C CNN
+	1    7800 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 5CED19BB
+P 7550 1300
+F 0 "H1" H 7350 1350 50  0000 L CNN
+F 1 "510+" H 7250 1250 50  0000 L CNN
+F 2 "Connector_Pin:Pin_D1.3mm_L11.3mm_W2.8mm_Flat" H 7550 1300 50  0001 C CNN
+F 3 "~" H 7550 1300 50  0001 C CNN
+	1    7550 1300
+	1    0    0    -1  
+$EndComp
+Text GLabel 4850 1700 3    50   Input ~ 0
+GND
+Text GLabel 7550 1700 3    50   Input ~ 0
+VCCBatM
+Text GLabel 7800 1700 3    50   Input ~ 0
+FETDrain
+Wire Wire Line
+	4850 1500 4850 1600
+$Comp
+L Device:R R2
+U 1 1 5CED27AC
+P 4700 1600
+F 0 "R2" V 4800 1550 50  0000 C CNN
+F 1 "10k" V 4900 1550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4630 1600 50  0001 C CNN
+F 3 "~" H 4700 1600 50  0001 C CNN
+	1    4700 1600
+	0    1    1    0   
+$EndComp
+Connection ~ 4850 1600
+Wire Wire Line
+	4850 1600 4850 1700
+Wire Wire Line
+	4400 1300 4500 1300
+Wire Wire Line
+	4500 1300 4500 1600
+Wire Wire Line
+	4500 1600 4550 1600
+Connection ~ 4500 1300
+Wire Wire Line
+	4500 1300 4550 1300
+Wire Wire Line
+	7550 1400 7550 1700
+Wire Wire Line
+	7800 1400 7800 1700
+Wire Wire Line
+	5500 3200 5400 3200
+Text GLabel 5400 3200 0    50   Input ~ 0
+GND
+Wire Wire Line
+	5900 3700 5900 3800
+Text GLabel 5900 3800 3    50   Input ~ 0
+GND
+Text GLabel 5150 2900 0    50   Input ~ 0
+VCC5VM
+Wire Wire Line
+	5150 2900 5500 2900
+Wire Wire Line
+	5500 2800 5450 2800
+Wire Wire Line
+	5450 2800 5450 3100
+Wire Wire Line
+	5450 3100 5500 3100
+Wire Wire Line
+	5450 2800 5350 2800
+Connection ~ 5450 2800
+Text GLabel 5350 2800 0    50   Input ~ 0
+SCK
+Text GLabel 1500 1300 0    50   Input ~ 0
+SCK
+Wire Wire Line
+	1500 1300 1600 1300
+Wire Wire Line
+	2400 1300 2500 1300
+Text GLabel 2500 1300 2    50   Input ~ 0
+MOSI
+Text GLabel 5350 2600 0    50   Input ~ 0
+MOSI
+Wire Wire Line
+	5350 2600 5500 2600
+$Comp
+L LTC2992:LTC2992 U3
+U 1 1 5CEDFF50
+P 8950 3800
+F 0 "U3" H 10000 4550 50  0000 L CNN
+F 1 "LTC2992" H 10000 4400 50  0000 L CNN
+F 2 "Package_SO:MSOP-16_3x4mm_P0.5mm" H 8950 3800 50  0001 C CNN
+F 3 "" H 8950 3800 50  0001 C CNN
+	1    8950 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 2350 8150 2350
+Wire Wire Line
+	8150 2350 8150 2500
+Text GLabel 7800 2350 0    50   Input ~ 0
+VCC5V
+$Comp
+L Device:R_Small R5
+U 1 1 5CEE21C3
+P 8250 2350
+F 0 "R5" V 8054 2350 50  0000 C CNN
+F 1 "0.01r" V 8145 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 8250 2350 50  0001 C CNN
+F 3 "~" H 8250 2350 50  0001 C CNN
+	1    8250 2350
+	0    1    1    0   
+$EndComp
+Connection ~ 8150 2350
+$Comp
+L Device:R_Small R6
+U 1 1 5CEE2257
+P 8750 2350
+F 0 "R6" V 8554 2350 50  0000 C CNN
+F 1 "0.01r" V 8645 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 8750 2350 50  0001 C CNN
+F 3 "~" H 8750 2350 50  0001 C CNN
+	1    8750 2350
+	0    1    1    0   
+$EndComp
+Connection ~ 8650 2350
+Wire Wire Line
+	8650 2350 8650 2500
+Wire Wire Line
+	8850 2350 8850 2500
+Wire Wire Line
+	8350 2350 8350 2500
+Text GLabel 8650 1950 1    50   Input ~ 0
+VCCBat
+Wire Wire Line
+	8650 1950 8650 2350
+Wire Wire Line
+	8350 2350 8350 1950
+Connection ~ 8350 2350
+Text GLabel 8350 1950 1    50   Input ~ 0
+VCC5VM
+Wire Wire Line
+	8850 2350 9150 2350
+Connection ~ 8850 2350
+Text GLabel 9150 2350 2    50   Input ~ 0
+VCCBatM
+Text GLabel 9550 3450 3    50   Input ~ 0
+GND
+Wire Wire Line
+	9450 3250 9550 3250
+Wire Wire Line
+	9550 3250 9550 3400
+Wire Wire Line
+	9450 3400 9550 3400
+Connection ~ 9550 3400
+Wire Wire Line
+	9550 3400 9550 3450
+Text GLabel 9450 2950 2    50   Input ~ 0
+VCCBadge
+Text GLabel 9450 3100 2    50   Input ~ 0
+VCCBat
+Text GLabel 7700 2950 0    50   Input ~ 0
+VCCBadge
+Wire Wire Line
+	2400 1500 2500 1500
+Wire Wire Line
+	2400 1600 2500 1600
+Text GLabel 2500 1500 2    50   Input ~ 0
+SDA
+Text GLabel 2500 1600 2    50   Input ~ 0
+SCL
+Text GLabel 7550 3450 0    50   Input ~ 0
+SCL
+Text GLabel 7550 3100 0    50   Input ~ 0
+SDA
+Wire Wire Line
+	7550 3450 7700 3450
+Wire Wire Line
+	7700 3300 7650 3300
+Wire Wire Line
+	7650 3300 7650 3100
+Wire Wire Line
+	7650 3100 7700 3100
+Wire Wire Line
+	7650 3100 7550 3100
+Connection ~ 7650 3100
+Text GLabel 8350 4000 3    50   Input ~ 0
+GND
+Wire Wire Line
+	8350 3800 8350 3900
+Wire Wire Line
+	9000 3800 9000 3900
+Wire Wire Line
+	9000 3900 8850 3900
+Connection ~ 8350 3900
+Wire Wire Line
+	8350 3900 8350 4000
+Wire Wire Line
+	8850 3800 8850 3900
+Connection ~ 8850 3900
+Wire Wire Line
+	8850 3900 8350 3900
+$Comp
+L Device:C C5
+U 1 1 5CEF72AD
+P 8000 3950
+F 0 "C5" H 8100 3950 50  0000 L CNN
+F 1 "0.1uF" H 8100 3850 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8038 3800 50  0001 C CNN
+F 3 "~" H 8000 3950 50  0001 C CNN
+	1    8000 3950
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8000 3800 8150 3800
+Wire Wire Line
+	8000 4100 8200 4100
+Wire Wire Line
+	8200 4100 8200 3900
+Wire Wire Line
+	8200 3900 8350 3900
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5CEFB026
+P 1800 4650
+F 0 "SW1" H 1800 4935 50  0000 C CNN
+F 1 "ManualFire" H 1800 4844 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 1800 4850 50  0001 C CNN
+F 3 "" H 1800 4850 50  0001 C CNN
+	1    1800 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5CEFB12A
+P 2850 4650
+F 0 "SW2" H 2850 4935 50  0000 C CNN
+F 1 "MCUFire" H 2850 4844 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 2850 4850 50  0001 C CNN
+F 3 "" H 2850 4850 50  0001 C CNN
+	1    2850 4650
+	1    0    0    -1  
+$EndComp
+Text GLabel 2000 5050 3    50   Input ~ 0
+FETGate
+Text GLabel 1600 5050 3    50   Input ~ 0
+VCC5V
+Text GLabel 2650 5050 3    50   Input ~ 0
+FETGate
+Text GLabel 3050 5050 3    50   Input ~ 0
+FETGateB
+$Comp
+L Device:LED D3
+U 1 1 5CF0BE54
+P 4400 4600
+F 0 "D3" H 4391 4816 50  0000 C CNN
+F 1 "LED" H 4391 4725 50  0000 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 4400 4600 50  0001 C CNN
+F 3 "~" H 4400 4600 50  0001 C CNN
+	1    4400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 5CF0C0D0
+P 4800 4600
+F 0 "R7" V 4593 4600 50  0000 C CNN
+F 1 "470r" V 4684 4600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4730 4600 50  0001 C CNN
+F 3 "~" H 4800 4600 50  0001 C CNN
+	1    4800 4600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4550 4600 4650 4600
+Text GLabel 5200 4600 2    50   Input ~ 0
+LEDPWM
+Wire Wire Line
+	4950 4600 5200 4600
+Wire Wire Line
+	4250 4600 4000 4600
+Wire Wire Line
+	4000 4600 4000 4800
+Text GLabel 4000 4800 3    50   Input ~ 0
+GND
+Text GLabel 6500 2700 2    50   Input ~ 0
+LEDPWM
+Wire Wire Line
+	6300 2700 6500 2700
+NoConn ~ 2400 1200
+NoConn ~ 2400 1400
+NoConn ~ 1600 1400
+NoConn ~ 1600 1200
+Wire Wire Line
+	1600 4650 1600 5050
+Wire Wire Line
+	2000 4650 2000 5050
+Wire Wire Line
+	2650 4650 2650 5050
+Wire Wire Line
+	3050 4650 3050 5050
+$EndSCHEMATC

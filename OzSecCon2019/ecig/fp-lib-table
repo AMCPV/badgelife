@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name D2PAK)(type Legacy)(uri ${KIPRJMOD}/D2PAK.mod)(options "")(descr ""))
+)
